@@ -75,7 +75,7 @@ function install_rosetta2() {
   sudo softwareupdate --install-rosetta
   if (($?)); then
     Log "ERROR: [BREW] Rosetta2 installation failed" && exit 100
-  fi 
+  fi
 }
 ## Github CLI installer function
 function install_github(){

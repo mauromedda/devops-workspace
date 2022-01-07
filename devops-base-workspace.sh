@@ -36,7 +36,7 @@ thishost=$(hostname | cut -d\. -f1-3)
 BREW=/opt/homebrew/bin/brew
 brew_packages=( git zsh-syntax-highlighting kubectl
 kubectx minikube helm ansible terraform awscli jq
-go k9s terragrunt)
+go k9s terragrunt pre-commit)
 brew_cask_packages=( visual-studio-code docker )
 
 #
@@ -86,7 +86,6 @@ function install_brew() {
 ## Brew packages installer function
 function brew_install() {
   rc=$(${BREW} install $1 &> /dev/null ; echo $?)
-  echo "DEBUG: ${rc}"
   if [[ ${rc} -ne 0 ]]; then
     Log "ERROR: [BREW] package ${1} installation failed" && exit 100
   fi
@@ -95,7 +94,6 @@ function brew_install() {
 ## Brew cask packages installer function
 function brew_cask_install() {
   rc=$(${BREW} install --cask $1 &> /dev/null ; echo $?)
-  echo "DEBUG: ${rc}"
   if [[ ${rc} -ne 0 ]]; then
     Log "ERROR: [BREW_CASK] package ${1} installation failed" && exit 100
   fi
@@ -164,6 +162,7 @@ function summary() {
     -> https://docs.docker.com/desktop/
     -> https://github.com/Homebrew/brew
     -> https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git
+    -> https://pre-commit.com/
 
 
 __SUMMARY__
