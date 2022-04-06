@@ -36,7 +36,7 @@ thishost=$(hostname | cut -d\. -f1-3)
 BREW=/opt/homebrew/bin/brew
 brew_packages=( git zsh-syntax-highlighting kubectl
 kubectx minikube helm ansible terraform awscli jq
-go k9s terragrunt pre-commit)
+go k9s terragrunt pre-commit graphviz)
 brew_cask_packages=( visual-studio-code docker )
 
 #
